@@ -57,7 +57,7 @@ void dynamicSetter(id self, SEL _cmd, id obj);
     }
 }
 
-void dynamicSetter(id self, SEL _cmd, id obj) {
+void dynamicSetter(id self, SEL _cmd, __unsafe_unretained id obj) {
     if (! [self myThread] || [NSThread currentThread] == [self myThread]) {
         //okay to execute
         //XXX:  clunky way to get the property name, but meh...

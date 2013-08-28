@@ -57,14 +57,14 @@
     return call;
 }
 
-- (NSInvocation*) invocationWithSelector:(SEL)selector andArg:(id)arg1 {
+- (NSInvocation*) invocationWithSelector:(SEL)selector andArg:(__unsafe_unretained id)arg1 {
     NSInvocation* call = [self invocationWithSelector:selector];
     [call setArgument:&arg1 atIndex:2];
     
     return call;
 }
 
-- (NSInvocation*) invocationWithSelector:(SEL)selector andArg:(id)arg1 andArg: (id)arg2 {
+- (NSInvocation*) invocationWithSelector:(SEL)selector andArg:(id)arg1 andArg: (__unsafe_unretained id)arg2 {
     NSInvocation* call = [self invocationWithSelector:selector andArg:arg1];
     [call setArgument:&arg2 atIndex:3];
     
